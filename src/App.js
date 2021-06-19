@@ -1,7 +1,9 @@
 import React, { useState, useEffect, createContext } from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import Header from './components/header';
 import Main from './components/main';
+import CountryPage from './components/countryPage';
 
 import GlobalStyle from './styles/global';
 
@@ -62,8 +64,26 @@ function App() {
   return (
     <CountriesContext.Provider value={{ countries, searchCountry, handleCountriesRegion }}>
       <GlobalStyle />
-      <Header />
-      <Main />
+
+      <BrowserRouter>
+
+        <Header />
+
+        <Switch>
+
+          <Route exact path="/">
+            <Main>
+            </Main>
+          </Route>
+
+          <Route exact path="/countryPage">
+            <CountryPage />
+          </Route>
+
+        </Switch>
+
+      </BrowserRouter>
+
     </CountriesContext.Provider>
   );
 }

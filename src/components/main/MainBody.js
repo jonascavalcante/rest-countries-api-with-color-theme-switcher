@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 
 import { CountriesContext } from './/..//../App';
 
@@ -13,10 +14,19 @@ const MainBody = () => {
     return (
         <MainBodyContainer>
             {countries.countries.map(country =>
-                <Card
+
+                <Link
+                    to={{
+                        pathname: "/countryPage",
+                        state: { info: country }
+                    }}
                     key={country.name}
-                    info={country}
-                />
+                >
+
+                    <Card info={country} />
+
+                </Link>
+
             )}
         </MainBodyContainer>
     );

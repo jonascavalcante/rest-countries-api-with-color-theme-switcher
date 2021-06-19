@@ -9,4 +9,8 @@ export const MainBodyContainer = styled.main`
     grid-template-columns: repeat(auto-fill, minmax(263px, 263px) ) ;
     gap: 75px;
     justify-content: space-between;
+
+    a {
+        text-decoration: none;
+    }
 `;
