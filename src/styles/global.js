@@ -8,9 +8,12 @@ export default createGlobalStyle`
         font-family: 'Nunito Sans', sans-serif;
     }
 
-    button {
+    button, input, select {
         border: none;
         outline: transparent;
+    }
+
+    button, select {
         cursor: pointer;
     }
 `;
