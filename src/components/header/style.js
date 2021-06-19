@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 
 export const HeaderTag = styled.header`
+    width: 100%;
+
+    top: 0;
+    position: fixed;
+
     background-color: hsl(209, 23%, 22%);
 `;
 
