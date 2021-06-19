@@ -10,15 +10,15 @@ const MainBody = () => {
 
     const countries = useContext(CountriesContext);
 
-    return ( 
+    return (
         <MainBodyContainer>
-            {countries.map(country => 
-                <Card 
+            {countries.countries.map(country =>
+                <Card
                     key={country.name}
                     info={country}
                 />
             )}
-        </MainBodyContainer>    
+        </MainBodyContainer>
     );
 }
 

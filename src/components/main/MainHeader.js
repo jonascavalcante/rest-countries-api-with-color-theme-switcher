@@ -1,16 +1,25 @@
-import React from 'react';
+import React, { useContext } from 'react';
+
+import { CountriesContext } from '../../App';
 
 import { MainHeaderContainer, InputArea, Select } from './styleMainHeader';
 
 const MainHeader = () => {
+
+    const countries = useContext(CountriesContext);
+
     return (
         <MainHeaderContainer>
             <InputArea>
                 <i className="fas fa-search"></i>
-                <input type="text" placeholder="Search for a country..." />
+                <input
+                    onChange={(e) => countries.searchCountry(e.target.value)}
+                    type="text"
+                    placeholder="Search for a country..."
+                />
             </InputArea>
-        
-            <Select>
+
+            <Select id="filterByRegion">
                 <option hidden>Filter by Region</option>
                 <option>Africa</option>
                 <option>Americas</option>
