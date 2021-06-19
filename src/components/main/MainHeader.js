@@ -19,7 +19,10 @@ const MainHeader = () => {
                 />
             </InputArea>
 
-            <Select id="filterByRegion">
+            <Select
+                id="filterByRegion"
+                onChange={(e) => countries.handleCountriesRegion(e.target.value)}
+            >
                 <option hidden>Filter by Region</option>
                 <option>Africa</option>
                 <option>Americas</option>

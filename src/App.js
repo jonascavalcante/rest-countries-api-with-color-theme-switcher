@@ -43,8 +43,24 @@ function App() {
     window.scrollTo(0, 0);
   }
 
+  function handleCountriesRegion(e) {
+
+    let countriesArray = [];
+
+    allCountries.map(country => {
+
+      if (country.region === e) {
+        countriesArray.push(country);
+      }
+
+      return countriesArray;
+    })
+    setCountries(countriesArray);
+    window.scrollTo(0, 0);
+  }
+
   return (
-    <CountriesContext.Provider value={{ countries, searchCountry }}>
+    <CountriesContext.Provider value={{ countries, searchCountry, handleCountriesRegion }}>
       <GlobalStyle />
       <Header />
       <Main />
