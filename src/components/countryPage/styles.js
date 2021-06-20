@@ -54,6 +54,7 @@ export const MainBody = styled.div`
 
         h2 {
             width: 100%;
+            margin-bottom: 20px;
             font-weight: 800;
         }
 
@@ -72,15 +73,18 @@ export const MainBody = styled.div`
         p {
             font-weight: 600;
                 
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+
                 span {
-                    margin-left: 5px;
                     font-weight: 300;
                 }
 
                 button {
-                    width: 96px;
+                    min-width: 96px;
                     height: 28px;
-                    margin-left: 10px;
+                    padding: 0 10px;
 
                     font-weight: 300;
 
@@ -90,7 +94,7 @@ export const MainBody = styled.div`
         }
 
         >p {
-            align-self: flex-end;
+            margin-top: 50px;
         }
     }
 `;

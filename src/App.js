@@ -61,8 +61,12 @@ function App() {
     window.scrollTo(0, 0);
   }
 
+  function refreshCountries() {
+    setCountries(allCountries);
+  }
+
   return (
-    <CountriesContext.Provider value={{ countries, searchCountry, handleCountriesRegion }}>
+    <CountriesContext.Provider value={{ countries, refreshCountries, allCountries, searchCountry, handleCountriesRegion }}>
       <GlobalStyle />
 
       <BrowserRouter>
@@ -72,8 +76,7 @@ function App() {
         <Switch>
 
           <Route exact path="/">
-            <Main>
-            </Main>
+            <Main />
           </Route>
 
           <Route exact path="/countryPage">
