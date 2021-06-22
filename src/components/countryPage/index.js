@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useParams } from 'react-router-dom';
 
 import { CountriesContext } from './/..//../App';
 
@@ -8,8 +8,11 @@ import { MainTag, Container, MainHeader, MainBody } from './styles';
 function CountryPage() {
 
     const location = useLocation();
-
+    
     const country = location.state?.info;
+
+    let { name } = useParams();
+    console.log(name);
     
     let languagesArray = [];
 
@@ -74,7 +77,7 @@ function CountryPage() {
                             {
                                 borderCountries.map(country => 
                                     <Link to={{
-                                                pathname: "/countryPage",
+                                                pathname: `/countryPage/${country.name}`,
                                                 state: { info: country }
                                             }}
                                             key={country.name}

@@ -17,7 +17,7 @@ const MainBody = () => {
 
                 <Link
                     to={{
-                        pathname: "/countryPage",
+                        pathname: `/countryPage/${country.name}`,
                         state: { info: country }
                     }}
                     key={country.name}

@@ -79,7 +79,7 @@ function App() {
             <Main />
           </Route>
 
-          <Route exact path="/countryPage">
+          <Route path="/countryPage/:name">
             <CountryPage />
           </Route>
 
