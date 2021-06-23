@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const MainTag = styled.main`
     margin-top: 80px;
-    background-color: hsl(207, 26%, 17%);
+    background-color: ${props => props.theme.background};
 `;
 
 export const Container = styled.div`
@@ -20,8 +20,8 @@ export const MainHeader = styled.div`
         font-size: 14px;
         font-weight: 600;
 
-        color: hsl(0, 0%, 100%);
-        background-color: hsl(209, 23%, 22%);
+        color: ${props => props.theme.text};
+        background-color: ${props => props.theme.elements};
 
         i {
             margin-right: 10px;
@@ -50,7 +50,7 @@ export const MainBody = styled.div`
         display: flex;
         flex-wrap: wrap;
         
-        color: hsl(0, 0%, 100%);
+        color: ${props => props.theme.text};
 
         h2 {
             width: 100%;
@@ -88,8 +88,8 @@ export const MainBody = styled.div`
 
                     font-weight: 300;
 
-                    color: hsl(0, 0%, 100%);
-                    background-color: hsl(209, 23%, 22%);
+                    color: ${props => props.theme.text};
+                    background-color: ${props => props.theme.elements};
                 }
         }
 

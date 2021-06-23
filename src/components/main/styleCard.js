@@ -5,8 +5,8 @@ export const CardContainer = styled.div`
 
     border-radius: 5px;
 
-    color: hsl(0, 0%, 100%);
-    background-color: hsl(209, 23%, 22%);
+    color: ${props => props.theme.text};
+    background-color: ${props => props.theme.elements};
 
     img {
         width: 100%;

@@ -1,11 +1,14 @@
-import React, { useState, useEffect, createContext } from 'react';
+import React, { useState, useEffect, createContext, useMemo } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+
+import { ThemeProvider } from 'styled-components';
 
 import Header from './components/header';
 import Main from './components/main';
 import CountryPage from './components/countryPage';
 
 import GlobalStyle from './styles/global';
+import themes from './styles/themes';
 
 export const CountriesContext = createContext();
 
@@ -13,6 +16,16 @@ function App() {
 
   const [countries, setCountries] = useState([]);
   const [allCountries, setAllCountries] = useState([]);
+  
+  const [theme, setTheme] = useState('dark');
+
+  const currentTheme = useMemo(() => {
+    return themes[theme] || themes.dark;
+  }, [theme])
+
+  function handleToggleTheme() {
+    setTheme(prevState => prevState === 'dark' ? 'light' : 'dark');
+  }
 
   useEffect(() => {
     (async () => {
@@ -67,26 +80,29 @@ function App() {
 
   return (
     <CountriesContext.Provider value={{ countries, refreshCountries, allCountries, searchCountry, handleCountriesRegion }}>
-      <GlobalStyle />
+      <ThemeProvider theme={currentTheme}>
 
-      <BrowserRouter>
+        <GlobalStyle />
 
-        <Header />
+        <BrowserRouter>
 
-        <Switch>
+          <Header onToggleTheme={handleToggleTheme}/>
 
-          <Route exact path="/">
-            <Main />
-          </Route>
+          <Switch>
 
-          <Route path="/countryPage/:name">
-            <CountryPage />
-          </Route>
+            <Route exact path="/">
+              <Main />
+            </Route>
 
-        </Switch>
+            <Route path="/countryPage/:name">
+              <CountryPage />
+            </Route>
 
-      </BrowserRouter>
+          </Switch>
 
+        </BrowserRouter>
+
+      </ThemeProvider>
     </CountriesContext.Provider>
   );
 }

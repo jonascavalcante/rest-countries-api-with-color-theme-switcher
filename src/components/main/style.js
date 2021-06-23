@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const MainTag = styled.main`
     margin-top: 80px;
-    background-color: hsl(207, 26%, 17%);
+    background-color: ${props => props.theme.background};
 `;
 
 export const Container = styled.div`

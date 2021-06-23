@@ -6,7 +6,7 @@ export const HeaderTag = styled.header`
     top: 0;
     position: fixed;
 
-    background-color: hsl(209, 23%, 22%);
+    background-color: ${props => props.theme.elements};
 `;
 
 export const Container = styled.div`
@@ -24,7 +24,7 @@ export const Container = styled.div`
         margin: 0;
         padding: 0;
 
-        color: hsl(0, 0%, 100%);
+        color: ${props => props.theme.text};
     }
 
     h1 {

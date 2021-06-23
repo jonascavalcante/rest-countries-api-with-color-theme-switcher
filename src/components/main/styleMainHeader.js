@@ -23,13 +23,13 @@ export const InputArea = styled.div`
 
     border-radius: 5px;
 
-    background-color: hsl(209, 23%, 22%);
+    background-color: ${props => props.theme.elements};
 
     display: flex;
     align-items: center;
 
     i, input {
-        color: hsl(0, 0%, 100%);
+        color: ${props => props.theme.text};
     }
 
     i {
@@ -46,7 +46,7 @@ export const InputArea = styled.div`
         background-color: transparent;
 
         ::placeholder {
-            color: hsl(0, 0%, 100%);
+            color: ${props => props.theme.text};
         }
     }
 `;
@@ -61,6 +61,6 @@ export const Select = styled.select`
 
     font-weight: 600;
 
-    color: hsl(0, 0%, 100%);
-    background-color: hsl(209, 23%, 22%);
+    color: ${props => props.theme.text};
+    background-color: ${props => props.theme.elements};
 `;
