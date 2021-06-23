@@ -7,7 +7,7 @@ const Header = (props) => {
         <HeaderTag>
             <Container>
                 <h1>Where in the world?</h1>
-                <button onClick={props.onToggleTheme}><i className="fas fa-moon"></i>Dark Mode</button>
+                <button onClick={props.onToggleTheme} id="themeButton"><i className="fas fa-moon"></i>Dark Mode</button>
             </Container>
         </HeaderTag>
      );

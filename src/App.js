@@ -23,7 +23,16 @@ function App() {
     return themes[theme] || themes.dark;
   }, [theme])
 
+  let themeButton = document.getElementById('themeButton');
+
   function handleToggleTheme() {
+
+    if (themeButton.innerText === 'Dark Mode') {
+      themeButton.innerHTML = `<i class="far fa-moon"></i>Light Mode`;
+    } else {
+      themeButton.innerHTML = `<i class="fas fa-moon"></i>Dark Mode`;
+    }
+
     setTheme(prevState => prevState === 'dark' ? 'light' : 'dark');
   }
 
