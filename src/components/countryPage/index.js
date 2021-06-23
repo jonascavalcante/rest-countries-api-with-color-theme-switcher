@@ -65,44 +65,46 @@ function CountryPage() {
                     </Link>
                 </MainHeader>
 
-                {country &&
-                    <MainBody>
-                        <img src={country.flag} alt={country.name} />
-
-                        <div>
-                            <h2>{country.name}</h2>
+                <MainBody>
+                    {country.name &&
+                        <>
+                            <img src={country.flag} alt={country.name} />
 
                             <div>
-                                <p>Native Name: <span>{country.nativeName}</span></p>
-                                <p>Population: <span>{country.population}</span></p>
-                                <p>Region: <span>{country.region}</span></p>
-                                <p>Sub Region: <span>{country.subregion}</span></p>
-                                <p>Capital: <span>{country.capital}</span></p>
+                                <h2>{country.name}</h2>
+
+                                <div>
+                                    <p>Native Name: <span>{country.nativeName}</span></p>
+                                    <p>Population: <span>{country.population}</span></p>
+                                    <p>Region: <span>{country.region}</span></p>
+                                    <p>Sub Region: <span>{country.subregion}</span></p>
+                                    <p>Capital: <span>{country.capital}</span></p>
+                                </div>
+
+                                <div>
+                                    <p>Top Level Domain: <span>{country.topLevelDomain}</span></p>
+                                    <p>Currencies: <span>{country.currencies[0].name}</span></p>
+                                    <p>Languages: <span>{languagesArray}</span></p>
+                                </div>
+
+                                <p>Border Countries:
+                                    {
+                                        borderCountries.map(country =>
+                                            <Link to={{
+                                                pathname: `/countryPage/${country.name}`,
+                                            }}
+                                                key={country.name}
+                                            >
+                                                <button>{country.name}</button>
+                                            </Link>
+                                        )
+                                    }
+                                </p>
+
                             </div>
-
-                            <div>
-                                <p>Top Level Domain: <span>{country.topLevelDomain}</span></p>
-                                {country.currencies && <p>Currencies: <span>{country.currencies[0].name}</span></p>}
-                                <p>Languages: <span>{languagesArray}</span></p>
-                            </div>
-
-                            <p>Border Countries:
-                                {
-                                    borderCountries.map(country =>
-                                        <Link to={{
-                                            pathname: `/countryPage/${country.name}`,
-                                        }}
-                                            key={country.name}
-                                        >
-                                            <button>{country.name}</button>
-                                        </Link>
-                                    )
-                                }
-                            </p>
-
-                        </div>
-                    </MainBody>
-                }
+                        </>
+                    }
+                </MainBody>
 
             </Container>
         </MainTag>
