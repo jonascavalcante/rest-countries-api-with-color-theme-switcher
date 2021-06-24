@@ -20,6 +20,7 @@ const MainBody = () => {
                         pathname: `/countryPage/${country.name}`,
                     }}
                     key={country.name}
+                    onClick={() => window.scrollTo(0, 0)}
                 >
 
                     <Card info={country} />

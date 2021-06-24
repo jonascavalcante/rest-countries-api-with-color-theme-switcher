@@ -10,6 +10,18 @@ export const Container = styled.div`
     max-width: 1440px;
     margin: auto;
     padding: 80px;
+
+    @media (max-width: 1440px) {
+        padding: 5.55%;
+    }
+
+    @media (max-width: 960px) {
+        padding: 40px 5.55%;
+    }
+    
+    @media (max-width: 375px) {
+        padding: 40px 16px;
+    }
 `;
 
 export const MainHeader = styled.div`
@@ -17,6 +29,11 @@ export const MainHeader = styled.div`
         width: 136px;
         height: 40px;
         
+        @media (max-width: 655px) {
+            width: 104px;
+            height: 32px;
+        }
+
         font-size: 14px;
         font-weight: 600;
 
@@ -36,9 +53,13 @@ export const MainBody = styled.div`
     min-height: calc(100vh - 360px);
     margin-top: 80px;
 
+    @media (max-width: 655px) {
+        margin-top: 64px;
+    }
+
     display: flex;
-    gap: 130px;
-    
+    gap: 10%;
+
     img {
         width: calc(50% - 65px);
         max-height: 395px;
@@ -47,7 +68,11 @@ export const MainBody = styled.div`
 
     >div {
         width: calc(50% - 65px);
-        max-height: 395px;
+
+        @media (min-width: 1440px) {
+            max-height: 395px;
+        }
+
         padding: 40px 0 35px 0;
 
         display: flex;
@@ -101,6 +126,36 @@ export const MainBody = styled.div`
 
         >p {
             margin-top: 50px;
+        }
+
+        @media (max-width: 520px) {
+            gap: 40px;
+            flex-direction: column;
+
+            h2 {
+                margin-bottom: 0;
+            }
+
+            >div {
+                width: 100%;
+            }
+
+            >p {
+                margin-top: 0;
+            }
+        }
+    }
+    
+    @media (max-width: 960px) {
+        flex-direction: column;
+        
+        img {
+            width: 100%;
+            max-height: 230px;
+        }
+
+        >div {
+            width: 100%;
         }
     }
 `;

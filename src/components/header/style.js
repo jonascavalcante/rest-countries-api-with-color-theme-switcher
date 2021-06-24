@@ -21,6 +21,14 @@ export const Container = styled.div`
 
     padding: 0 80px;
 
+    @media (max-width: 1440px) {
+        padding: 0 5.55%;
+    }
+
+    @media (max-width: 375px) {
+        padding: 0 16px;
+    }
+
     h1, button {
         margin: 0;
         padding: 0;
@@ -31,7 +39,12 @@ export const Container = styled.div`
     h1 {
         font-size: 24px;
         font-weight: 800;
+
+        @media (max-width: 425px) {
+            font-size: 14px;
+        }
     }
+
 
     button {
         height: 35px;

@@ -94,6 +94,7 @@ function CountryPage() {
                                                 pathname: `/countryPage/${country.name}`,
                                             }}
                                                 key={country.name}
+                                                onClick={() => window.scrollTo(0, 0)}
                                             >
                                                 <button>{country.name}</button>
                                             </Link>

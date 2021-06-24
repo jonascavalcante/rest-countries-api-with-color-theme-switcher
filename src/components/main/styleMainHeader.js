@@ -7,19 +7,44 @@ export const MainHeaderContainer = styled.div`
     margin: 48px auto;
     padding: 0 80px;
 
+    @media (max-width: 1440px) {
+        padding: 0 5.55%;
+    }
+
+    @media (max-width: 375px) {
+        padding: 0 16px;
+    }
+
     position: fixed;
     left: 0;
     right: 0;
 
     display: flex;
     flex-wrap: wrap;
-    gap: 75px;
+    gap: 5.2%;
+
+    @media (max-width: 740px) {
+        gap: 40px;
+    }
+
+    @media (max-width: 655px) {
+        margin: 25px auto;
+    }
+
     justify-content: space-between;
 `;
 
 export const InputArea = styled.div`
     width: 480px;
     height: 56px;
+
+    @media (max-width: 810px) {
+        width: 342px;
+    }
+
+    @media (max-width: 655px) {
+        height: 48px;
+    }
 
     border-radius: 5px;
 
@@ -55,6 +80,10 @@ export const InputArea = styled.div`
 export const Select = styled.select`
     width: 200px;
     height: 56px;
+
+    @media (max-width: 655px) {
+        height: 48px;
+    }
 
     padding: 0 25px;
 
