@@ -7,6 +7,7 @@ export const CardContainer = styled.div`
 
     color: ${props => props.theme.text};
     background-color: ${props => props.theme.elements};
+    box-shadow: 0 0 25px -20px black;
 
     img {
         width: 100%;

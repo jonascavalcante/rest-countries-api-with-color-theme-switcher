@@ -24,6 +24,7 @@ export const InputArea = styled.div`
     border-radius: 5px;
 
     background-color: ${props => props.theme.elements};
+    box-shadow: 0 0 25px -20px black;
 
     display: flex;
     align-items: center;
@@ -63,4 +64,5 @@ export const Select = styled.select`
 
     color: ${props => props.theme.text};
     background-color: ${props => props.theme.elements};
+    box-shadow: 0 0 25px -20px black;
 `;

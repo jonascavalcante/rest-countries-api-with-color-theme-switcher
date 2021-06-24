@@ -22,6 +22,9 @@ export const MainHeader = styled.div`
 
         color: ${props => props.theme.text};
         background-color: ${props => props.theme.elements};
+        box-shadow: 0 0 10px -8px black;
+
+        border-radius: 5px;
 
         i {
             margin-right: 10px;
@@ -90,6 +93,9 @@ export const MainBody = styled.div`
 
                     color: ${props => props.theme.text};
                     background-color: ${props => props.theme.elements};
+                    box-shadow: 0 0 10px -8px black;
+
+                    border-radius: 3px;
                 }
         }
 
