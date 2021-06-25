@@ -7,7 +7,7 @@ const Card = (props) => {
         <CardContainer>
             <img src={props.info.flag} alt={props.info.name} />
             <h2>{props.info.name}</h2>
-            <p>Population: <span>{props.info.population}</span></p>
+            <p>Population: <span>{(props.info.population).toLocaleString('pt-BR')}</span></p>
             <p>Region: <span>{props.info.region}</span></p>
             <p>Capital: <span>{props.info.capital}</span></p>
         </CardContainer>

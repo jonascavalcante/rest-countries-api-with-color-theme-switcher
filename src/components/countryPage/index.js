@@ -75,7 +75,7 @@ function CountryPage() {
 
                                 <div>
                                     <p>Native Name: <span>{country.nativeName}</span></p>
-                                    <p>Population: <span>{country.population}</span></p>
+                                    <p>Population: <span>{(country.population).toLocaleString('pt-BR')}</span></p>
                                     <p>Region: <span>{country.region}</span></p>
                                     <p>Sub Region: <span>{country.subregion}</span></p>
                                     <p>Capital: <span>{country.capital}</span></p>
