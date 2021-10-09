@@ -38,7 +38,7 @@ function App() {
 
   useEffect(() => {
     (async () => {
-      const req = await fetch("https://restcountries.eu/rest/v2/all");
+      const req = await fetch("https://restcountries.com/v2/all");
       const resp = await req.json();
       setCountries(resp);
       setAllCountries(resp);
