@@ -42,7 +42,7 @@ function CountryPage() {
 
     function filterBorderCountries() {
 
-        country.borders.map(country =>
+        country.borders?.map(country =>
 
             countries.allCountries.map(countryElement => {
 
@@ -83,7 +83,7 @@ function CountryPage() {
 
                                 <div>
                                     <p>Top Level Domain: <span>{country.topLevelDomain}</span></p>
-                                    <p>Currencies: <span>{country.currencies[0].name}</span></p>
+                                    <p>Currencies: <span>{country.currencies ? country.currencies[0].name : ''}</span></p>
                                     <p>Languages: <span>{languagesArray}</span></p>
                                 </div>
 
